@@ -1,0 +1,90 @@
+/* src/styles.css */
+
+/* General Body and Container Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* UserProfile Component Styles */
+  .user-profile {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  .user-profile h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .user-profile p {
+    font-size: 1.1em;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  .user-profile p span {
+    font-weight: bold;
+  }
+  
+  .user-profile .loading {
+    text-align: center;
+    font-size: 1.2em;
+    color: #888;
+    padding: 20px;
+  }
+  
+  /* User Profile Button Styles (if applicable) */
+  .user-profile button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .user-profile button:hover {
+    background-color: #45a049;
+  }
+  
+  .user-profile button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  /* Page Header Styles */
+  h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  /* Footer or Additional Section Styles (Optional) */
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+  }
+  
