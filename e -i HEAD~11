@@ -1,0 +1,72 @@
+[33mcommit fa5467a17977a30a0c5c79aff48dc9bce1ce056a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: GujjaRamaKrishna <ramakrishnagujja744@gmail.com>
+Date:   Sun Feb 23 11:43:02 2025 -0600
+
+    first commit
+
+[33mcommit cee6be8172d6590f991881b6356f083b7a23868b[m
+Merge: 2f1e1bb 89e01f6
+Author: GujjaRamaKrishna <ramakrishnagujja744@gmail.com>
+Date:   Sun Feb 23 11:37:01 2025 -0600
+
+    Resolved merge conflicts
+
+[33mcommit 2f1e1bb7bf3f47a82c444fa5c560d7b71b22549d[m
+Author: GujjaRamaKrishna <ramakrishnagujja744@gmail.com>
+Date:   Sun Feb 23 11:31:25 2025 -0600
+
+    Add frontend files
+
+[33mcommit 89e01f65370ca1a64f4306d1af2e5f3103309ff0[m
+Author: RamaKrishnaGujja1 <ramakrishnagujja744@gmail.com>
+Date:   Sun Feb 23 11:25:53 2025 -0600
+
+    Update README.md
+
+[33mcommit df93b53ff5e6f782093d84617a99e2f75999102a[m
+Author: GujjaRamaKrishna <ramakrishnagujja744@gmail.com>
+Date:   Sun Feb 23 11:25:13 2025 -0600
+
+    first commit
+
+[33mcommit db7c908c4abbdc24cf60eca89747e91d5503545d[m
+Author: GujjaRamaKrishna <ramakrishnagujja744@gmail.com>
+Date:   Sun Feb 23 11:24:18 2025 -0600
+
+    first commit
+
+[33mcommit 26adbf940e1402fce53460b611d7b4158f3957dc[m
+Author: GujjaRamaKrishna <ramakrishnagujja744@gmail.com>
+Date:   Sun Feb 23 11:22:36 2025 -0600
+
+    Remove .env file from repository
+
+[33mcommit 108c7d8c7e281ce2d5487f89a86bbd8dde741b11[m
+Author: GujjaRamaKrishna <ramakrishnagujja744@gmail.com>
+Date:   Sun Feb 23 11:21:40 2025 -0600
+
+    second commit
+
+[33mcommit 172d948fe748f7777a24519834d5b6de9651e81d[m
+Author: GujjaRamaKrishna <ramakrishnagujja744@gmail.com>
+Date:   Sun Feb 23 11:20:32 2025 -0600
+
+    first commit
+
+[33mcommit ddf91282ab50ebe98333cb55b57097cdaa9de8c0[m
+Author: GujjaRamaKrishna <ramakrishnagujja744@gmail.com>
+Date:   Sun Feb 23 11:20:06 2025 -0600
+
+    first commit
+
+[33mcommit b187f5e95b2db099a6fbb4812bc068da3aa739f1[m
+Author: GujjaRamaKrishna <ramakrishnagujja744@gmail.com>
+Date:   Sun Feb 23 11:15:10 2025 -0600
+
+    first commit
+
+[33mcommit 04595f14f15f693370253e6674d2275e632371e2[m
+Author: GujjaRamaKrishna <ramakrishnagujja744@gmail.com>
+Date:   Sun Feb 23 11:11:33 2025 -0600
+
+    Initial commit
