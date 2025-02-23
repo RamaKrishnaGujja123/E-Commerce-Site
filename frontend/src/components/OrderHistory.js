@@ -7,7 +7,6 @@ const OrderHistory = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        // Use mock user ID for testing
         const response = await axios.get('/api/orders/1');
         setOrders(response.data);
       } catch (error) {
@@ -30,7 +29,6 @@ const OrderHistory = () => {
               <p>Order ID: {order._id}</p>
               <p>Status: {order.status}</p>
               <p>Total: ${order.total}</p>
-              {/* Show the products in the order */}
               <ul>
                 {order.products.map(product => (
                   <li key={product.product_id}>

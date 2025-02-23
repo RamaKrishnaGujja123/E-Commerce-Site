@@ -1,35 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import ProductCard from './components/ProductCard';
-import Cart from './components/CartPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Products from './components/Products';
+import CartPage from './components/CartPage';
 import OrderHistory from './components/OrderHistory';
 import Login from './components/Login';
-import axios from 'axios';
+import Signup from './components/Signup';
+import Profile from './components/Profile';
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
   const [token, setToken] = useState(localStorage.getItem('token') || null);
-  const [products, setProducts] = useState([]);
-
-  // Fetch products on initial render
-  useEffect(() => {
-    axios
-      .get('https://fakestoreapi.com/products')
-      .then((response) => {
-        setProducts(response.data);
-      })
-      .catch((error) => {
-        console.error('Error fetching products:', error);
-      });
-  }, []);
 
   const handleAddToCart = (product) => {
     setCartItems((prevItems) => {
-      const existingItem = prevItems.find((item) => item.product._id === product._id);
+      const existingItem = prevItems.find((item) => item.product.id === product.id);
       if (existingItem) {
         return prevItems.map((item) =>
-          item.product._id === product._id
+          item.product.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
@@ -37,14 +27,13 @@ const App = () => {
         return [...prevItems, { product, quantity: 1 }];
       }
     });
+    localStorage.setItem('cart', JSON.stringify(cartItems));
   };
 
   const handleRemoveItem = (productId) => {
-    setCartItems(cartItems.filter((item) => item.product._id !== productId));
-  };
-
-  const handleClearCart = () => {
-    setCartItems([]);
+    const updatedCart = cartItems.filter((item) => item.product.id !== productId);
+    setCartItems(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
 
   const handleLogout = () => {
@@ -52,19 +41,26 @@ const App = () => {
     localStorage.removeItem('token');
   };
 
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    setCartItems(storedCart);
+  }, []);
+
   return (
     <Router>
-      <Navbar token={token} onLogout={handleLogout} />
-      <Routes>
-        <Route path="/" element={<div className="product-list">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} onAddToCart={handleAddToCart} />
-          ))}
-        </div>} />
-        <Route path="/cart" element={<Cart cartItems={cartItems} onRemoveItem={handleRemoveItem} onClearCart={handleClearCart} />} />
-        <Route path="/orders" element={<OrderHistory />} />
-        <Route path="/login" element={<Login setToken={setToken} />} />
-      </Routes>
+      <Header token={token} onLogout={handleLogout} />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home onAddToCart={handleAddToCart} />} />
+          <Route path="/products" element={<Products onAddToCart={handleAddToCart} />} />
+          <Route path="/cart" element={<CartPage cartItems={cartItems} onRemoveItem={handleRemoveItem} />} />
+          <Route path="/orders" element={<OrderHistory />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/login" element={<Login setToken={setToken} />} />
+          <Route path="/signup" element={<Signup setToken={setToken} />} />
+        </Routes>
+      </main>
+      <Footer />
     </Router>
   );
 };
