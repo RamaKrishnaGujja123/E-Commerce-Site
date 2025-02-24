@@ -1,0 +1,19 @@
+.weather-alerts {
+  margin-top: 20px;
+}
+
+.alert {
+  background-color: #f8d7da;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.alert h3 {
+  margin: 0;
+  color: #721c24;
+}
+
+.alert p {
+  color: #721c24;
+}

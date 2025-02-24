@@ -1,0 +1,23 @@
+.weather-comparison .comparison-result {
+  background: #eef2f3;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.weather-comparison .comparison-result h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.weather-comparison .comparison-result .detail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.weather-comparison .comparison-result .detail span {
+  font-weight: bold;
+}

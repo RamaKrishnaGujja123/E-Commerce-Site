@@ -1,0 +1,12 @@
+.search-history .history {
+  cursor: pointer;
+  margin: 5px 0;
+  font-size: 16px;
+  color: #007BFF;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.search-history .history:hover {
+  color: #0056b3;
+}

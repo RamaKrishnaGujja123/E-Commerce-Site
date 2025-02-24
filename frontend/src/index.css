@@ -6,10 +6,11 @@
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease-in-out;
 }
 
 body {
-  background: #f7f7f7;
+  background: linear-gradient(135deg, #f0f4f8 0%, #e5efff 100%);
   color: #333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -20,6 +21,12 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #61dafb;
+  text-decoration: underline;
 }
 
 /* Utility Classes */
@@ -54,11 +61,33 @@ button {
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   font-size: 1rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 600;
+  background-color: #61dafb;
+  color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease-in-out;
+  position: relative;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 0.3s ease;
 }
 
 button:hover {
+  background-color: #21a1f1;
   transform: translateY(-2px);
+}
+
+button:active::after {
+  transform: translate(-50%, -50%) scale(1);
 }
 
 button:disabled {
@@ -66,34 +95,19 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Header */
-header {
-  background-color: #282c34;
-  padding: 1.5rem 0;
-  color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-
-nav ul li a {
-  color: #61dafb;
-  font-size: 1.2rem;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #fff;
-}
-
 /* Main Content */
 main {
-  padding: 2rem 0;
+  padding: 3rem 1rem;
+  background: #fff;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  transition: all 0.4s ease;
+}
+
+main:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* Product List */
@@ -102,22 +116,27 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  margin-top: 2rem;
 }
 
 /* Product Card */
 .product-card {
   background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   max-width: 320px;
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #f7f7f7;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 .product-card img {
@@ -131,17 +150,26 @@ main {
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .product-card p {
   font-size: 1rem;
   color: #666;
   margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.product-card:hover p {
+  color: #333;
 }
 
 /* Cart Page */
 .cart-page ul {
   list-style: none;
+  padding: 0;
 }
 
 .cart-page li {
@@ -161,6 +189,7 @@ main {
 .cart-page h3 {
   font-size: 1.2rem;
   font-weight: 600;
+  color: #333;
 }
 
 /* Checkout Page */
@@ -171,12 +200,19 @@ main {
   background: #fff;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
+  margin-top: 2rem;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.checkout-page:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .checkout-page h2 {
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  color: #333;
 }
 
 .checkout-page input,
@@ -188,22 +224,27 @@ main {
   border-radius: 8px;
   background: #f4f4f9;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .checkout-page input:focus,
 .checkout-page textarea:focus {
   border-color: #61dafb;
+  background-color: #fff;
 }
 
 .checkout-page button {
   background-color: #61dafb;
-  color: #fff;
+  color: white;
   width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
 }
 
 .checkout-page button:hover:not(:disabled) {
   background-color: #21a1f1;
+  transform: translateY(-2px);
 }
 
 /* Order Confirmation */
@@ -211,6 +252,16 @@ main {
   text-align: center;
   padding: 2rem;
   font-size: 1.2rem;
+  color: #333;
+  background: #f4f4f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-confirmation p {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 1rem;
 }
 
 /* Responsive Design */
@@ -222,9 +273,31 @@ main {
 
   .product-card {
     max-width: 100%;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
   }
 
   .checkout-page {
     padding: 1.5rem;
   }
+
+  .order-confirmation {
+    font-size: 1rem;
+  }
+}
+
+/* Hover and Transitions */
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease-in-out;
+}
+
+button:hover {
+  background-color: #21a1f1;
+  transform: translateY(-3px);
+}
+
+button:active {
+  background-color: #61dafb;
+  transform: translateY(1px);
 }

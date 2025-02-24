@@ -9,10 +9,12 @@ import OrderHistory from './components/OrderHistory';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Profile from './components/Profile';
+import './App.css';
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
   const [token, setToken] = useState(localStorage.getItem('token') || null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleAddToCart = (product) => {
     setCartItems((prevItems) => {
@@ -48,14 +50,15 @@ const App = () => {
 
   return (
     <Router>
-      <Header token={token} onLogout={handleLogout} />
+      <Header token={token} onLogout={handleLogout} setSearchQuery={setSearchQuery} />
       <main>
         <Routes>
           <Route path="/" element={<Home onAddToCart={handleAddToCart} />} />
-          <Route path="/products" element={<Products onAddToCart={handleAddToCart} />} />
+          <Route path="/products" element={<Products searchQuery={searchQuery} onAddToCart={handleAddToCart} />} />
+          <Route path="/products/category/:category" element={<Products searchQuery={searchQuery} onAddToCart={handleAddToCart} />} />
           <Route path="/cart" element={<CartPage cartItems={cartItems} onRemoveItem={handleRemoveItem} />} />
           <Route path="/orders" element={<OrderHistory />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<Profile token={token} />} />
           <Route path="/login" element={<Login setToken={setToken} />} />
           <Route path="/signup" element={<Signup setToken={setToken} />} />
         </Routes>

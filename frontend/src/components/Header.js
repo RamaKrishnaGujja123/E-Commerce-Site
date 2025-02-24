@@ -1,51 +1,51 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import "./Header.css"
 
-const Header = ({ token, onLogout }) => {
+const Header = ({ token, onLogout, setSearchQuery }) => {
+  const [searchInput, setSearchInput] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setSearchQuery(searchInput);
+    navigate('/products');
+  };
+
   return (
     <header className="header">
       <div className="container">
-        <div className="logo">
-          <Link to="/">
-            <img src="/Images/Logo.png" alt="Logo" />
-          </Link>
-        </div>
+        <Link to="/" className="logo">
+          <img src="/images/Logo.png" alt="Logo" />
+        </Link>
         <nav>
           <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/products">Products</Link>
-            </li>
-            <li>
-              <Link to="/cart">Cart</Link>
-            </li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/products">Products</Link></li>
+            <li><Link to="/cart">Cart</Link></li>
             {token ? (
               <>
-                <li>
-                  <Link to="/orders">Order History</Link>
-                </li>
-                <li>
-                  <div className="user-cart">
-                    <Link to="/profile">
-                      <img src="/path-to-user-icon.png" alt="User Profile" />
-                    </Link>
-                    <button onClick={onLogout}>Logout</button>
-                  </div>
-                </li>
+                <li><Link to="/orders">Orders</Link></li>
+                <li><Link to="/profile">Profile</Link></li>
+                <li><button onClick={onLogout}>Logout</button></li>
               </>
             ) : (
-              <li>
-                <Link to="/login">Login</Link> / <Link to="/signup">Signup</Link>
-              </li>
+              <>
+                <li><Link to="/login">Login</Link></li>
+                <li><Link to="/signup">Sign Up</Link></li>
+              </>
             )}
           </ul>
         </nav>
-        <div className="search-bar">
-          <input type="text" placeholder="Search products..." />
+        <form className="search-bar" onSubmit={handleSearch}>
+          <input
+            type="text"
+            placeholder="Search categories..."
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+          />
           <button type="submit">Search</button>
-        </div>
+        </form>
       </div>
     </header>
   );

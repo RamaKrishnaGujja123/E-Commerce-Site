@@ -1,0 +1,309 @@
+/* Global Styles */
+body {
+  background: linear-gradient(135deg, #f8f9fa, #e2e3e5); /* Soft gradient for a clean e-commerce feel */
+  color: #333;
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.hero-section {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #ff8a00, #ff6f61, #1a73e8);
+}
+
+/* Featured Products */
+.featured-products {
+  width: 100%; /* Ensures full width */
+  padding: 60px 20px;
+}
+
+.featured-products h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Ensures 3 products fill the entire horizontal space */
+  gap: 20px;
+  width: 100%; /* Ensures the grid takes full width */
+}
+
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: 1fr; /* One column on small screens */
+  }
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%; /* Makes sure product cards fill their container vertically */
+  width: 100%; /* Ensures product cards take the full width of their grid cell */
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+  max-width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.product-card img:hover {
+  transform: scale(1.05);
+}
+
+.product-card h3 {
+  margin: 15px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.product-card p {
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.product-card button {
+  background-color: #1a73e8;
+  color: white;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100%; /* Ensures the button takes full width of the card */
+}
+
+.product-card button:hover {
+  background-color: #0056b3;
+  transform: translateY(-4px);
+}
+
+/* Product Categories */
+.product-categories {
+  width: 100%; /* Ensures full width */
+  padding: 60px 20px;
+}
+
+.product-categories h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Ensures 4 categories fill the entire horizontal space */
+  gap: 20px;
+  width: 100%; /* Ensures the grid takes full width */
+}
+
+@media (max-width: 1200px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .categories-grid {
+    grid-template-columns: 1fr; /* One column on small screens */
+  }
+}
+
+.category-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  height: 100%; /* Makes sure category cards fill their container vertically */
+  width: 100%; /* Ensures category cards take the full width of their grid cell */
+}
+
+.category-card img {
+  max-width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.category-card img:hover {
+  transform: scale(1.05);
+}
+
+.category-card h3 {
+  margin: 15px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Offers and Promotions */
+.offers-promotions {
+  width: 100%;
+  padding: 60px 20px;
+  background-color: #f8f9fa; /* Light background for contrast */
+  text-align: center;
+}
+
+.offer-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.offer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.offer-image {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.offer-info {
+  text-align: center;
+}
+
+.offer-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Customer Reviews */
+.testimonials {
+  background: #f1f1f1;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonials-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  background: white;
+  position: relative;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.customer-reviews .carousel-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden; /* Hide overflowing testimonials */
+}
+
+.customer-reviews .carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.customer-reviews .carousel-item img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 100px; /* Adjust based on your design */
+}
+
+.customer-reviews .carousel-item p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Add semi-transparent background */
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-control-prev {
+  left: -40px; /* Adjusted position on the left */
+}
+
+.carousel-control-next {
+  right: -40px; /* Adjusted position on the right */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Darker on hover */
+}
+
+/* Footer Styling */
+footer {
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.1);
+  margin-top: auto;
+}
+
+footer a {
+  color: #ff6f61;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer a:hover {
+  color: #e44b3d;
+  transform: scale(1.05);
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
